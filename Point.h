@@ -5,12 +5,7 @@
 
 class Point {
     public:
-        Point(int _x = 0, int _y = 0) : x(_x), y(_y) {
-            std::cout << " Constructor" << std::endl;
-        }
-        ~Point(){
-            std::cout << " Destructor" << std::endl;
-        }
+        Point(int _x = 0, int _y = 0) : x(_x), y(_y) {}
 
         void setX(int _x) {
             x = _x;
@@ -30,11 +25,11 @@ class Point {
         }
     private:
         int x, y;
-        friend std::ostream& operator << (std::ostream &output, const Point &p);
+        friend std::ostream& operator<<(std::ostream &output, const Point &p);
 };
 
-std::ostream& operator << (std::ostream &output, const Point &p){
-    output << p.x << ", " << p.y;
+inline std::ostream& operator<<(std::ostream &output, const Point &p) {
+    output << "(" << p.x << ", " << p.y << ")";
     return output;
 }
 
